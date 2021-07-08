@@ -76,6 +76,7 @@ export interface Entity {
     HTANParticipantID: string;
     ImagingAssayType?: string;
     AssayType?: string;
+    Race: string;
 
     // Derived or attached in frontend
     atlas: Atlas;
