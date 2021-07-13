@@ -46,6 +46,10 @@ export interface BaseSerializableEntity {
     HTANParticipantID: string;
     ImagingAssayType?: string;
     AssayType?: string;
+    Race: string;
+    Ethnicity: string;
+    CountryofResidence: string;
+    Gender: string;
 
     // Derived or attached in frontend
     atlasid: string;

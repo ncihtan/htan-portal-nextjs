@@ -20,6 +20,10 @@ export enum AttributeNames {
     // Synapse attribute names
     TissueorOrganofOrigin = 'TissueorOrganofOrigin',
     PrimaryDiagnosis = 'PrimaryDiagnosis',
+    Gender = 'Gender',
+    Race = 'Race',
+    Ethnicity = 'Ethnicity',
+    CountryofResidence = 'CountryofResidence',
     Component = 'Component',
     Biospecimen = 'Biospecimen',
     AtlasName = 'AtlasName',
@@ -47,6 +51,26 @@ export const AttributeMap: { [attr in AttributeNames]: IAttributeInfo } = {
         getValues: (e: Entity) =>
             _.uniq(e.diagnosis.map((d) => d.PrimaryDiagnosis)),
         displayName: 'Disease Type',
+    },
+    [AttributeNames.Race]: {
+        getValues: (e: Entity) =>
+            _.uniq(e.demographics.map((d) => d.Race)),
+        displayName: 'Race',
+    },
+    [AttributeNames.Ethnicity]: {
+        getValues: (e: Entity) =>
+            _.uniq(e.demographics.map((d) => d.Ethnicity)),
+        displayName: 'Ethnicity',
+    },
+    [AttributeNames.CountryofResidence]: {
+        getValues: (e: Entity) =>
+            _.uniq(e.demographics.map((d) => d.CountryofResidence)),
+        displayName: 'Country of Residence',
+    },
+    [AttributeNames.Gender]: {
+        getValues: (e: Entity) =>
+            _.uniq(e.demographics.map((d) => d.Gender)),
+        displayName: 'Gender',
     },
     [AttributeNames.Component]: {
         path: 'Component',
